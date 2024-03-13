@@ -1,6 +1,4 @@
-## 
-
-
+## Use the command `viw` and `viW` to identify `word` and `WORD`
 
 
 
