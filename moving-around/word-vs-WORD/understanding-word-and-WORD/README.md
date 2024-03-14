@@ -1,4 +1,10 @@
+# Understanding `word` and `WORD`
+
+
+
 ## Use the command `viw` and `viW` to identify `word` and `WORD`
+
+When trying to understand what is word and WORD, I use the command `viw` and `viW` to high light them.
 
 
 
