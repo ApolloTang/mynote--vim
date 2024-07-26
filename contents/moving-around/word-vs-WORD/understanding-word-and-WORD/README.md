@@ -4,42 +4,22 @@
 
 ## § Use the command `viw` and `viW` to identify `word` and `WORD`
 
-When trying to understand what is word and WORD, I use the command `viw` and `viW` to high light them.
+When trying to understand *word* and *WORD*, I use the command `viw` and `viW` to highlight them.
 
-
-### §§ Identifying *Small word* with `viw`:
+The following image illustrated the *word*s highlighted by `viw`: 
 
 <img src="./assets/small-word.png" width=350px />
 
-### §§ Identifying *big WORD* with `viW`:
+The following image illustrated the *WORD*s highlighted by `viW`: 
 
 <img src="./assets/big-word.png" width=390px />
 
----
 
 ## What is a *small* **word**? Here is my understanding:
 
-Consider the following strings:
+A word is either a **keyword-group** or a **non-keyword group**. 
 
-```
-    #$$%^s%#@(sd_f23s(afld_saf    /()..)/   //"@#$/sfdsafdaf
-```
-
-- A word is either a **keyword group** or a **non-keyword group** (see below for explanation for what is **keyword group** or a **non-keyword group**) .
-
-- The boundary between any of the *keyword group*,  *non-keyword group* and *sequence of white space characters* are the **delimiters** for `word`.
-
-- A word does not include the *white space characters* that follows. 
-
-I shall use the following image to illustrate this.
-
-![my-understanding-of-word](./assets/my-understanding-of-word.png)
-
-
-
-#### Keyword group (green in the image)
-
-A Keyword group is a sequence of letters, digits and underscores:
+A **keyword-group** is a sequence of letters, digits and underscores, for example:
 
 ```
 s
@@ -48,9 +28,7 @@ afld_saf
 sfdsafdaf
 ```
 
-#### Non-keyword group (red in the image)
-
-A non-keyword group is a sequence of "special characters":
+A **non-keyword group** is a sequence of "special characters," for example:
 
 ```
 #$$%^
@@ -60,8 +38,21 @@ A non-keyword group is a sequence of "special characters":
 //"@#$/
 ```
 
-In the image the `v` marks the beginning of a `word`, whereas, `^` marks the end of a `word`.
+Also, a word does not include the *white space characters* that follow. 
 
+Consider the following strings:
+
+```
+    #$$%^s%#@(sd_f23s(afld_saf    /()..)/   //"@#$/sfdsafdaf
+```
+
+The following image shows the groups with colours:
+
+![my-understanding-of-word](./assets/my-understanding-of-word.png)
+
+In the image, boxes with green are the *keyword group* while boxes with red are the *non-keyword group*. Boxes with yellow are the *sequence of white space characters*.
+
+The boundary between any of the *keyword group*, *non-keyword group* and *the sequence of white space characters* are the **delimiters** for `word.`
 
 
 #### References:
