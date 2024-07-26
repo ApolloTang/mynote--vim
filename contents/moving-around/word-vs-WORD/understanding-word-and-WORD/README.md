@@ -48,13 +48,13 @@ Consider the following strings:
 
 The following image shows the groups with colours:
 
-![my-understanding-of-word](./assets/my-understanding-of-word.png)
+![my-understanding-of-word](./assets/explained--small-word.png)
 
 In the image, boxes with green are the *keyword group* while boxes with red are the *non-keyword group*. Boxes with yellow are the *sequence of white space characters*.
 
 The boundary between any of the *keyword group*, *non-keyword group* and *the sequence of white space characters* are the **delimiters** for `word.`  In the image `V` marks the begining of a *word* and `^` marks the end of a *word*;  thus, the word motion `w` will move the cursor over to location marked by `V` , while `e` will move the cursor over to the location marked by `^`.
 
-
+![my-understanding-of-word](./assets/explained--big-word.png)
 
 
 #### References:
