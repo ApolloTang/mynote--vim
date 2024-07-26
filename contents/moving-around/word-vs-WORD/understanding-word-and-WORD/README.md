@@ -2,23 +2,22 @@
 
 
 
-## Use the command `viw` and `viW` to identify `word` and `WORD`
+## § Use the command `viw` and `viW` to identify `word` and `WORD`
 
 When trying to understand what is word and WORD, I use the command `viw` and `viW` to high light them.
 
 
+### §§ Identifying *Small word* with `viw`:
 
-### Use `viw` to identify *Small* `word`:
+<img src="./assets/small-word.png" width=350px />
 
-![small-word](./assets/small-word.png)
+### §§ Identifying *big WORD* with `viW`:
 
-### Use `viW` to identify *big* `WORD`:
-
-![big-word](./assets/big-word.png)
+<img src="./assets/big-word.png" width=390px />
 
 ---
 
-## My understanding of the definition of **word**
+## What is a *small* **word**? Here is my understanding:
 
 Consider the following strings:
 
@@ -26,7 +25,7 @@ Consider the following strings:
     #$$%^s%#@(sd_f23s(afld_saf    /()..)/   //"@#$/sfdsafdaf
 ```
 
-- A word is either a **keyword group** or a **non-keyword group**.
+- A word is either a **keyword group** or a **non-keyword group** (see below for explanation for what is **keyword group** or a **non-keyword group**) .
 
 - The boundary between any of the *keyword group*,  *non-keyword group* and *sequence of white space characters* are the **delimiters** for `word`.
 
