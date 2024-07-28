@@ -20,7 +20,7 @@ afld_saf
 sfdsafdaf
 ```
 
-I use the term *keyword*, similar to the term *reserved word* or *identifiers* in a programing language (see [this](https://en.wikipedia.org/wiki/Reserved_word) or [this](https://www.programiz.com/c-programming/c-keywords-identifier)).
+I use the term *keyword*, similar to the term *reserved word* or *identifiers* in a programming language (see [this](https://en.wikipedia.org/wiki/Reserved_word) or [this](https://www.programiz.com/c-programming/c-keywords-identifier)).
 
 A **non-keyword group** is a sequence of special characters (non-black characters), for example:
 
@@ -46,37 +46,34 @@ Let's highlight the groups with colour:
 
 Green boxes are the *keyword group* while red boxes are the *non-keyword group*. Finally, yellow boxes are the *sequence of white space characters*.
 
-The boundary of a *word* (lowercase) is simply: 
+Within a line, the delimiter for a *word* (lowercase) is the boundaries: 
 1. The *sequence of white space characters* (yellow)
 2. Any boundary between the *keyword group* (green) and *non-keyword group* (red)
 
 With these boundaries for delimiters clearly illustrated, I can easily see the beginning and the ending of a *word* (lowercase), which I marked with the `V` and `^` marks, respectively. 
 
-Thus, pressing the word motion `w` and `e` in normal mode will move the cursor over to the next location marked by `V` and `^` respectively.
+Thus, pressing the word motion `w` and `e` in normal mode will move the cursor over to the next location marked by `V` and `^`, respectively.
 
-Now that we have understood the boundary of a *word* (lowercase), we can easily explain *WORD* (uppercase). 
+Now that we have understood the boundary of a *word* (lowercase), we can easily explain what a *WORD* (uppercase) is. 
 
-The [Official definition of `WORD`](https://vimhelp.org/motion.txt.html#WORD)  is:
+The [Official definition of `WORD`](https://vimhelp.org/motion.txt.html#WORD) is:
 
 > A WORD consists of a sequence of non-blank characters, separated with white
 space.  An empty line is also considered to be a WORD.
 
-Within a line, the boundary of a *WORD* (uppercase) is simply: 
+Within a line, the delimiter for a *WORD* (uppercase) is the boundaries: 
 1. The *sequence of white space characters* (yellow)
 
-For a *WORD* (uppercase), the *keyword group* (green) and *non-keyword group* (red) are now treated as the same entity, there is no longer a boundary between them:
+For a *WORD* (uppercase), the *keyword group* (green) and *non-keyword group* (red) are now treated as the same entity; there is no longer a boundary between them:
    
 ![my-understanding-of-word](./assets/explained--big-word.png)
+
+The horizontal curly braces mark the *WORD* (uppercase) as a unit. There is no longer a delimiter between the *keyword group* (green) and *non-keyword group* (red). Therefore the `V` and `^` is no longer present between the *keyword group* (green) and *non-keyword group* (red). Pressing the word motion `W` and `E` in normal mode will move the cursor over to the next location marked by `V` and `^`, illustrated, respectively. 
 
 
 #### References:
 
 [stackoverflow.com/questions/22931032/vim-word-vs-word/61319054#](https://stackoverflow.com/a/61319054/3136861)
-
-
-
-## Official definition of `word` and `WORD`
-
 
 
 
