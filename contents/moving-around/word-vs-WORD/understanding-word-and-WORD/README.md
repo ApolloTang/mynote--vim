@@ -1,4 +1,77 @@
-# Understanding `word` and `WORD`
+# Understanding *word* (lowercase) and *WORD* (uppercase) in vim
+
+This article is my attempt to illustrate what the *word* (lowercase) and *WORD* (uppercase) are in vim. 
+
+The [Official definition of `word`](https://vimhelp.org/motion.txt.html#word)  is:
+
+> A word consists of a sequence of letters, digits and underscores, or a
+sequence of other non-blank characters, separated with white space (spaces,
+tabs, `<EOL>`).  This can be changed with the 'iskeyword' option.  An empty line
+is also considered to be a word.
+
+To make understanding easier, I am introducing two terminologies: **keyword-group** and **non-keyword group**. 
+
+A **keyword group** is a sequence of letters, digits, and underscores, for example:
+
+```
+s
+sd_f23s
+afld_saf
+sfdsafdaf
+```
+
+I use the term *keyword*, similar to the term *reserved word* or *identifiers* in a programing language (see [this](https://en.wikipedia.org/wiki/Reserved_word) or [this](https://www.programiz.com/c-programming/c-keywords-identifier)).
+
+A **non-keyword group** is a sequence of special characters (non-black characters), for example:
+
+```
+#$$%^
+%#@(
+(
+/()..)/
+//"@#$/
+```
+
+
+
+Consider the following string (composed of groups of characters from the examples above):
+
+```
+    #$$%^s%#@(sd_f23s(afld_saf    /()..)/   //"@#$/sfdsafdaf
+```
+
+Let's colours highlight the groups with colour:
+
+![my-understanding-of-word](./assets/explained--small-word.png)
+
+Green boxes are the *keyword group* while red boxes are the *non-keyword group*. Finally, yellow boxes are the *sequence of white space characters*.
+
+The boundary of a *word* (lowercase) is simply: 
+1. *the sequence of white space characters* (yellow)
+2. The boundary between any of the *keyword group* (green), *non-keyword group* (red)
+
+With these boundaries for delimiters clearly illustrated, I can easily see the beginning and end of a *word* (lowercase), which I marked with the `V` and `^` marks, respectively. 
+
+Thus, pressing the word motion `w` and `e` in normal mode will move the cursor over to the next location marked by `V` and `e` respectively.
+
+ 
+
+The [Official definition of `WORD`](https://vimhelp.org/motion.txt.html#WORD)  is:
+
+> A WORD consists of a sequence of non-blank characters, separated with white
+space.  An empty line is also considered to be a WORD.
+
+![my-understanding-of-word](./assets/explained--big-word.png)
+
+
+#### References:
+
+[stackoverflow.com/questions/22931032/vim-word-vs-word/61319054#](https://stackoverflow.com/a/61319054/3136861)
+
+
+
+## Official definition of `word` and `WORD`
+
 
 
 
@@ -15,81 +88,12 @@ The following image illustrated the *WORD*s highlighted by `viW`:
 <img src="./assets/big-word.png" width=390px />
 
 
-## What is a *small* **word**? Here is my understanding:
-
-A word is either a **keyword-group** or a **non-keyword group**. 
-
-A **keyword-group** is a sequence of letters, digits and underscores, for example:
-
-```
-s
-sd_f23s
-afld_saf
-sfdsafdaf
-```
-
-A **non-keyword group** is a sequence of "special characters," for example:
-
-```
-#$$%^
-%#@(
-(
-/()..)/
-//"@#$/
-```
-
-Also, a word does not include the *white space characters* that follow. 
-
-Consider the following strings:
-
-```
-    #$$%^s%#@(sd_f23s(afld_saf    /()..)/   //"@#$/sfdsafdaf
-```
-
-The following image shows the groups with colours:
-
-![my-understanding-of-word](./assets/explained--small-word.png)
-
-In the image, boxes with green are the *keyword group* while boxes with red are the *non-keyword group*. Boxes with yellow are the *sequence of white space characters*.
-
-The boundary between any of the *keyword group*, *non-keyword group* and *the sequence of white space characters* are the **delimiters** for `word.`  In the image `V` marks the begining of a *word* and `^` marks the end of a *word*;  thus, the word motion `w` will move the cursor over to location marked by `V` , while `e` will move the cursor over to the location marked by `^`.
-
-![my-understanding-of-word](./assets/explained--big-word.png)
-
-
-#### References:
-
-[stackoverflow.com/questions/22931032/vim-word-vs-word/61319054#](https://stackoverflow.com/a/61319054/3136861)
-
-
-
-## Official definition of `word` and `WORD`
-
-### Official definition of `word`
-
-
-> A word consists of a sequence of letters, digits and underscores, or a
-sequence of other non-blank characters, separated with white space (spaces,
-tabs, <EOL>).  This can be changed with the 'iskeyword' option.  An empty line
-is also considered to be a word.
-
-
-### Official definition of `WORD`
-
-
-> A WORD consists of a sequence of non-blank characters, separated with white
-space.  An empty line is also considered to be a WORD.
-
-
-
-### References:
-[vimhelp.org/motion.txt.html#word-motions](https://vimhelp.org/motion.txt.html#word-motions)
-
 ## Special case with change word/WORD (`cw` , `cW`) and change to end of word/WORD  (`ce` , `cE`)
 
 > `cw` and `cW` are treated like `ce` and `cE` if the cursor is
 on a non-blank.  This is because "cw" is interpreted as change-word, and a
 word does not include the following white space.
+
 
 ### References:
 
