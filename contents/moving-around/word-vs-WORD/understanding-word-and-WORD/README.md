@@ -2,7 +2,7 @@
 
 This article is my attempt to illustrate what the *word* (lowercase) and *WORD* (uppercase) are in vim. 
 
-The [Official definition of `word`](https://vimhelp.org/motion.txt.html#word)  is:
+The [official definition of `word`](https://vimhelp.org/motion.txt.html#word)  is:
 
 > A word consists of a sequence of letters, digits and underscores, or a
 sequence of other non-blank characters, separated with white space (spaces,
@@ -20,7 +20,7 @@ afld_saf
 sfdsafdaf
 ```
 
-I use the term *keyword*, similar to the term *reserved word* or *identifiers* in a programming language (see [this](https://en.wikipedia.org/wiki/Reserved_word) or [this](https://www.programiz.com/c-programming/c-keywords-identifier)).
+I use the term *keyword*, similar to the term *reserved word* or *identifiers* in a programming language (see [this](https://en.wikipedia.org/wiki/Reserved_word) or [this](https://www.programiz.com/c-programming/c-keywords-identifier)). The *keyword group* is simply "a sequence of letters, digits and underscores" as defined in the vim's official definition of *word* (lowercase).
 
 A **non-keyword group** is a sequence of special characters (non-black characters), for example:
 
@@ -32,7 +32,7 @@ A **non-keyword group** is a sequence of special characters (non-black character
 //"@#$/
 ```
 
-
+The *non-keyword group* is simply "a sequence of other non-blank characters" as defined in the vim's official definition of *word* (lowercase).
 
 Consider the following string (composed of groups of characters from the examples above):
 
@@ -56,7 +56,7 @@ Thus, pressing the word motion `w` and `e` in normal mode will move the cursor o
 
 Now that we have understood the boundary of a *word* (lowercase), we can easily explain what a *WORD* (uppercase) is. 
 
-The [Official definition of `WORD`](https://vimhelp.org/motion.txt.html#WORD) is:
+The [official definition of `WORD`](https://vimhelp.org/motion.txt.html#WORD) is:
 
 > A WORD consists of a sequence of non-blank characters, separated with white
 space.  An empty line is also considered to be a WORD.
