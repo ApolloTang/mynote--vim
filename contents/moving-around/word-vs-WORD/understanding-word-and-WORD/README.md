@@ -40,27 +40,32 @@ Consider the following string (composed of groups of characters from the example
     #$$%^s%#@(sd_f23s(afld_saf    /()..)/   //"@#$/sfdsafdaf
 ```
 
-Let's colours highlight the groups with colour:
+Let's highlight the groups with colour:
 
 ![my-understanding-of-word](./assets/explained--small-word.png)
 
 Green boxes are the *keyword group* while red boxes are the *non-keyword group*. Finally, yellow boxes are the *sequence of white space characters*.
 
 The boundary of a *word* (lowercase) is simply: 
-1. *the sequence of white space characters* (yellow)
-2. The boundary between any of the *keyword group* (green), *non-keyword group* (red)
+1. The *sequence of white space characters* (yellow)
+2. Any boundary between the *keyword group* (green) and *non-keyword group* (red)
 
-With these boundaries for delimiters clearly illustrated, I can easily see the beginning and end of a *word* (lowercase), which I marked with the `V` and `^` marks, respectively. 
+With these boundaries for delimiters clearly illustrated, I can easily see the beginning and the ending of a *word* (lowercase), which I marked with the `V` and `^` marks, respectively. 
 
-Thus, pressing the word motion `w` and `e` in normal mode will move the cursor over to the next location marked by `V` and `e` respectively.
+Thus, pressing the word motion `w` and `e` in normal mode will move the cursor over to the next location marked by `V` and `^` respectively.
 
- 
+Now that we have understood the boundary of a *word* (lowercase), we can easily explain *WORD* (uppercase). 
 
 The [Official definition of `WORD`](https://vimhelp.org/motion.txt.html#WORD)  is:
 
 > A WORD consists of a sequence of non-blank characters, separated with white
 space.  An empty line is also considered to be a WORD.
 
+Within a line, the boundary of a *WORD* (uppercase) is simply: 
+1. The *sequence of white space characters* (yellow)
+
+For a *WORD* (uppercase), the *keyword group* (green) and *non-keyword group* (red) are now treated as the same entity, there is no longer a boundary between them:
+   
 ![my-understanding-of-word](./assets/explained--big-word.png)
 
 
