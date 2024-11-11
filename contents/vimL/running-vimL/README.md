@@ -1,0 +1,1 @@
+ [terminal - Is it possible to execute a vimscript from the command line? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/34631/is-it-possible-to-execute-a-vimscript-from-the-command-line) 
